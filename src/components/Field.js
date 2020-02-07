@@ -5,13 +5,11 @@ class Field extends React.Component {
     static contextType = LanguageContext;
 
     render() {
+        const text = this.context.language === 'english' ? 'Submit' : 'Aceptar';
+
         return (
             <div className="ui field">
-                <label>
-                    <LanguageContext.Consumer>
-                        {(value) => value === 'english' ? 'Name' : 'Nombre'}
-                    </LanguageContext.Consumer>
-                </label>
+                <label>{text}</label>
                 <input />
             </div>
         );
